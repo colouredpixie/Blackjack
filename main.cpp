@@ -1,3 +1,5 @@
+//https://github.com/colouredpixie/Blackjack
+
 #include "blackjack.h"
 
 #include <QApplication>

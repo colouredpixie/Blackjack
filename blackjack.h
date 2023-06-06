@@ -83,7 +83,7 @@ public:
         switch (m_rank) {
         case ACE:
             return 11;
-            //TODO: implement home rules for 1 on menu choice
+            //: implement home rules for 1 on menu choice
         case JACK:
             return 10;
         case DAME:
@@ -171,6 +171,8 @@ public:
 
     QString reverseAddress{"F:/programs/Qt/projects/Blackjack/resources/classic.png"};
     QLabel* starterCards;
+
+    //TODO: add sound
 
 
     Blackjack(QWidget *parent = nullptr);

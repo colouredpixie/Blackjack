@@ -795,9 +795,6 @@
     </property>
    </widget>
    <widget class="QLabel" name="deckLeft">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
     <property name="geometry">
      <rect>
       <x>620</x>
@@ -811,9 +808,6 @@
     </property>
    </widget>
    <widget class="QLabel" name="deckLabel">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
     <property name="geometry">
      <rect>
       <x>560</x>

@@ -25,6 +25,10 @@ Blackjack::Blackjack(QWidget *parent)
 
     playerBank = 100;
     playerBid = 5;
+
+    //optional rules
+    ui->deckLabel->setVisible(false);
+    ui->deckLeft->setVisible(false);
 }
 
 Blackjack::~Blackjack()
@@ -36,6 +40,8 @@ Blackjack::~Blackjack()
 //button triggers
 void Blackjack::on_startButton_clicked()
 {
+    //TODO: add sound
+
     //preparing the table
     resetTable();
     ui->hitButton->setEnabled(true);
@@ -57,6 +63,8 @@ void Blackjack::on_startButton_clicked()
 
 void Blackjack::on_hitButton_clicked()
 {
+    //TODO: add sound
+
     //setting up card slot in hand. currentCardIndex iterator is for counting the correct spot
     QLabel* playerCard = this->ui->playerCard_3;
     QLabel* dealerCard = this->ui->dealerCard_3;
@@ -219,11 +227,15 @@ void Blackjack::endgame() {
     msgBox.setDefaultButton(QMessageBox::Yes);
 
     if (playerPoints <= 21 && (dealerPoints < playerPoints ||  dealerPoints > 21)) {
+        //TODO: add sound
+
         msgBox.setText("Congrats! You've won!");
         playerBank += playerBid;
     } else if (playerPoints == dealerPoints) {
         msgBox.setText("It's a draw!");
     } else {
+        //TODO: add sound
+
         msgBox.setText("You've lost!");
         playerBank -= playerBid;
         if (playerBank <= 0) {
