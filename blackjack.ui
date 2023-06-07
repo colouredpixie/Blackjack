@@ -794,32 +794,6 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="deckLeft">
-    <property name="geometry">
-     <rect>
-      <x>620</x>
-      <y>210</y>
-      <width>32</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="deckLabel">
-    <property name="geometry">
-     <rect>
-      <x>560</x>
-      <y>210</y>
-      <width>51</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Cards left:</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="playerPointsNameLabel">
     <property name="geometry">
      <rect>
@@ -912,6 +886,7 @@
     </property>
    </widget>
   </widget>
+  <widget class="QStatusBar" name="statusbar"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
@@ -929,13 +904,6 @@
     <addaction name="actionFantasy"/>
     <addaction name="actionAddReverseImage"/>
    </widget>
-   <widget class="QMenu" name="menuAce_value">
-    <property name="title">
-     <string>Ace value</string>
-    </property>
-    <addaction name="actionEquals_1"/>
-    <addaction name="actionEquals_11"/>
-   </widget>
    <widget class="QMenu" name="menuEdit_bet">
     <property name="title">
      <string>Edit bet</string>
@@ -944,9 +912,7 @@
    </widget>
    <addaction name="menuMain"/>
    <addaction name="menuEdit_bet"/>
-   <addaction name="menuAce_value"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionClassic">
    <property name="text">
     <string>Classic</string>
@@ -955,16 +921,6 @@
   <action name="actionFantasy">
    <property name="text">
     <string>Fantasy</string>
-   </property>
-  </action>
-  <action name="actionEquals_1">
-   <property name="text">
-    <string>Equals 1</string>
-   </property>
-  </action>
-  <action name="actionEquals_11">
-   <property name="text">
-    <string>Equals 11</string>
    </property>
   </action>
   <action name="actionAddReverseImage">

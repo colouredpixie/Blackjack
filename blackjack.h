@@ -5,6 +5,7 @@
 
 #include <QPixmap>
 #include <QLabel>
+#include <QPropertyAnimation>
 
 #include <array>
 
@@ -74,16 +75,22 @@ public:
         case SPADES: address[45] = 'S'; break;
         }
 
-        //qDebug() << address[44] << address[45];
         QPixmap pixmap(address);
         label->setPixmap(pixmap);
+
+        //animation
+        QPropertyAnimation *animation = new QPropertyAnimation(label, "geometry");
+        animation->setDuration(150);
+        animation->setStartValue(QRect(660, 200, label->width(), label->height())); //hardcoded x, y
+        animation->setEndValue(label->geometry());
+
+        animation->start();
     }
 
     int getCardValue() const {
         switch (m_rank) {
         case ACE:
             return 11;
-            //: implement home rules for 1 on menu choice
         case JACK:
             return 10;
         case DAME:
@@ -93,6 +100,10 @@ public:
         default:
             return (static_cast<int>(m_rank) + 1);
         }
+    }
+
+    Ranks getRank() const {
+        return m_rank;
     }
 
 };
@@ -172,17 +183,24 @@ public:
     QString reverseAddress{"F:/programs/Qt/projects/Blackjack/resources/classic.png"};
     QLabel* starterCards;
 
-    //TODO: add sound
+    bool aceValueChanged;
+    std::vector<Card> dealerHand;
+    std::vector<Card> playerHand;
 
 
     Blackjack(QWidget *parent = nullptr);
     ~Blackjack();
 
     void setCardImage(QLabel *cardLabel);
+    void coverCard(QLabel *label);
+
+    void makeSound(const QString source);
+
     void resetTable();
-    void deal(Deck& deck, int& points, QLabel *pointsLabel, QLabel *cardLabel);
+    void deal(Deck& deck, int& points, QLabel *pointsLabel, QLabel *cardLabel, std::vector<Card>& hand);
     void endgame();
-    void setAceValue(int value);
+
+    void setAceValue(const std::vector<Card> hand, int& points, QLabel *pointsLabel);
 
 
 private slots:
@@ -193,9 +211,6 @@ private slots:
     void on_actionClassic_triggered();
     void on_actionFantasy_triggered();
     void on_actionAddReverseImage_triggered();
-
-    void on_actionEquals_1_triggered();
-    void on_actionEquals_11_triggered();
 
     void on_actionNewBet_triggered();
 
