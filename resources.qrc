@@ -4,6 +4,7 @@
         <file>resources/WilhelmScream.wav</file>
         <file>resources/Wilderness.wav</file>
         <file>resources/arcade.wav</file>
+        <file>resources/click.wav</file>
     </qresource>
     <qresource prefix="/images">
         <file>resources/00.png</file>

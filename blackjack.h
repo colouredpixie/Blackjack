@@ -51,28 +51,28 @@ public:
     Card(Ranks rank = Ranks::MAX_RANKS, Suits suit = Suits::MAX_SUITS) : m_rank(rank), m_suit(suit) {}
 
     void openCard(QLabel *label) const  {
-        char address[51] {"F:/programs/Qt/projects/Blackjack/resources/00.png"};
+        char address[25] {":images/resources/00.png"};
         switch (m_rank) {
-        case ACE: address[44] = 'A'; break;
-        case TWO: address[44] = '2'; break;
-        case THREE: address[44] = '3'; break;
-        case FOUR: address[44] = '4'; break;
-        case FIVE: address[44] = '5'; break;
-        case SIX: address[44] = '6'; break;
-        case SEVEN: address[44] = '7'; break;
-        case EIGHT: address[44] = '8'; break;
-        case NINE: address[44] = '9'; break;
-        case TEN: address[44] = '1'; break;
-        case JACK: address[44] = 'J'; break;
-        case DAME: address[44] = 'Q'; break;
-        case KING: address[44] = 'K'; break;
+        case ACE: address[18] = 'A'; break;
+        case TWO: address[18] = '2'; break;
+        case THREE: address[18] = '3'; break;
+        case FOUR: address[18] = '4'; break;
+        case FIVE: address[18] = '5'; break;
+        case SIX: address[18] = '6'; break;
+        case SEVEN: address[18] = '7'; break;
+        case EIGHT: address[18] = '8'; break;
+        case NINE: address[18] = '9'; break;
+        case TEN: address[18] = '1'; break;
+        case JACK: address[18] = 'J'; break;
+        case DAME: address[18] = 'Q'; break;
+        case KING: address[18] = 'K'; break;
         }
 
         switch (m_suit) {
-        case HEARTS:  address[45] = 'H'; break;
-        case DIAMONDS:  address[45] = 'D'; break;
-        case CLUBS:  address[45] = 'C'; break;
-        case SPADES: address[45] = 'S'; break;
+        case HEARTS:  address[19] = 'H'; break;
+        case DIAMONDS:  address[19] = 'D'; break;
+        case CLUBS:  address[19] = 'C'; break;
+        case SPADES: address[19] = 'S'; break;
         }
 
         QPixmap pixmap(address);
@@ -180,8 +180,7 @@ public:
 
     int aceValue;
 
-    QString reverseAddress{"F:/programs/Qt/projects/Blackjack/resources/classic.png"};
-    QLabel* starterCards;
+    QString reverseAddress{":images/resources/classic.png"};
 
     bool aceValueChanged;
     std::vector<Card> dealerHand;

@@ -19,6 +19,7 @@ set(PROJECT_SOURCES
         blackjack.cpp
         blackjack.h
         blackjack.ui
+        resources.qrc
         ${TS_FILES}
 )
 
@@ -72,6 +73,3 @@ endif()
 
 find_package(Qt6 REQUIRED COMPONENTS Multimedia)
 target_link_libraries(Blackjack PRIVATE Qt6::Multimedia)
-
-#add_executable(Blackjack main.cpp resources.qrc)
-

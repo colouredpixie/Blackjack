@@ -6,10 +6,10 @@
 #include <QMenuBar>
 #include <QInputDialog>
 #include <QFileDialog>
+#include <QApplication>
 
 #include <QSoundEffect>
 #include <QMediaPlayer>
-
 
 #include <array>
 #include <ctime>
@@ -71,7 +71,7 @@ void Blackjack::on_startButton_clicked()
 
 void Blackjack::on_hitButton_clicked()
 {
-    //makeSound("F:/programs/Qt/projects/Blackjack/resources/resources/click.wav");
+    makeSound("F:/programs/Qt/projects/Blackjack/resources/click.wav");
 
     //setting up card slot in hand. currentCardIndex iterator is for counting the correct spot
     QLabel* playerCard = this->ui->playerCard_3;
@@ -111,7 +111,7 @@ void Blackjack::on_hitButton_clicked()
 
 void Blackjack::on_standButton_clicked()
 {
-   //makeSound("F:/programs/Qt/projects/Blackjack/resources/resources/click.wav");
+   makeSound("F:/programs/Qt/projects/Blackjack/resources/click.wav");
 
     playerStand = true;
 
@@ -144,7 +144,7 @@ void Blackjack::on_standButton_clicked()
 //change of card reverse
 void Blackjack::on_actionClassic_triggered()
 {
-    reverseAddress = "F:/programs/Qt/projects/Blackjack/resources/classic.png";
+    reverseAddress = ":images/resources/classic.png";
 
     setCardImage(ui->dealerCardHidden);
     setCardImage(ui->deck);
@@ -152,7 +152,7 @@ void Blackjack::on_actionClassic_triggered()
 
 void Blackjack::on_actionFantasy_triggered()
 {
-    reverseAddress = "F:/programs/Qt/projects/Blackjack/resources/fantasy.png";
+    reverseAddress = ":images/resources/fantasy.png";
 
     setCardImage(ui->dealerCardHidden);
     setCardImage(ui->deck);
@@ -185,7 +185,7 @@ void Blackjack::on_actionNewBet_triggered()
 
 //main gameplay functions
 void Blackjack::deal(Deck& deck, int& points, QLabel *pointsLabel, QLabel *cardLabel, std::vector<Card>& hand) {
-    //makeSound("F:/programs/Qt/projects/Blackjack/resources/resources/arcade.wav");
+    makeSound("F:/programs/Qt/projects/Blackjack/resources/arcade.wav");
 
     deck.dealCard();
 
@@ -246,7 +246,7 @@ void Blackjack::resetTable() {
                                 ui->playerCard_1, ui->playerCard_2, ui->playerCard_3, ui->playerCard_4, ui->playerCard_5, ui->playerCard_6, ui->playerCard_7};
 
     for (auto label : starterCards) {
-        label->setPixmap(QPixmap("F:/programs/Qt/projects/Blackjack/resources/empty.png"));
+        label->setPixmap(QPixmap(":images/resources/empty.png"));
     }
 
     currentCardIndex = 3;
